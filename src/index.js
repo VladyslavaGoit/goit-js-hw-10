@@ -13,7 +13,6 @@ function onInput(event) {
   let quantityObjects;
   fetchCountries(name)
     .then(data => {
-      console.log(data);
       data.forEach((_, i) => {
         quantityObjects = i + 1;
         return quantityObjects;
@@ -49,7 +48,17 @@ function createMarkupDiv(arr) {
         const countryLanguages = Object.values(languages)
           .map(item => item)
           .join(', ');
-        console.log(countryLanguages);
+        if (official === 'Ukraine') {
+          return `<div class="ukraine-box">
+        <div class="country-info-box">
+          <img class="country-image" src="${svg}" alt="${alt}" />
+          <h2 class="country-title">${official}</h2>
+        </div>
+        <p class="country-text">Capital: <span class="country-span">${capital[0]}</span></p>
+        <p class="country-text">Population: <span class="country-span">${population}</span></p>
+        <p class="country-text">Languages: <span class="country-span">${countryLanguages}</span></p>
+        </div>`;
+        }
         return `
         <div class="country-info-box">
           <img class="country-image" src="${svg}" alt="${alt}" />

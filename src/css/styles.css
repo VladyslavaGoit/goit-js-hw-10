@@ -53,3 +53,11 @@ body {
   display: flex;
   gap: 10px;
 }
+
+.ukraine-box {
+  height: 600px;
+  padding-left: 15px;
+  background-image: url('https://w.forfun.com/fetch/d6/d6ff0809b06230abb650523d0e63a2a1.jpeg');
+  background-size: contain;
+  color: white;
+}
